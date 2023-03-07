@@ -57,7 +57,7 @@
                                         <tr>
                                             <td width="10%">{{ $orderItem->id }}</td>
                                             <td>
-                                                <img src="{{ $orderItem->product->productImages[0]['image'] }}" style="width: 50px; height: 50px" alt="">
+                                                <img src="{{ asset($orderItem->product->productImages[0]->image ) }}" style="width: 100px; height: 100px" alt="">
                                             </td>
                                             <td>
                                                 {{ $orderItem->product->name }}

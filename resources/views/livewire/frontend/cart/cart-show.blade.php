@@ -31,7 +31,7 @@
                                 <div class="col-md-6 my-auto">
                                     <a href="{{ '/collections/'.$cartItem->product->category->slug.'/'.$cartItem->product->slug }}">
                                         <label class="product-name">
-                                            <img src="{{ $cartItem->product->productImages[0]->image }}" style="width: 50px; height: 50px" alt="">
+                                            <img src="{{ asset($cartItem->product->productImages[0]->image) }}" style="width: 50px; height: 50px" alt="">
                                             {{ $cartItem->product->name }}
                                         </label>
                                     </a>
@@ -76,7 +76,7 @@
                 <div class="col-md-8 my-md-auto mt-3">
                     <h4>
                         <a href="{{ url('/collections') }}">
-                            <button class="btn" style="background-color: rgb(255, 0, 0); color: white;" onmouseover="background-color: rgb(153, 11, 11)">Continue to Shop</button>
+                            <button class="btn" style="background-color: rgb(255, 0, 0); color: white;">Continue to Shop</button>
                         </a>
                     </h4>
                 </div>

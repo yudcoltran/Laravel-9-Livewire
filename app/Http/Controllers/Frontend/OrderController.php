@@ -15,10 +15,12 @@ class OrderController extends Controller
     }
     public function show($orderId){
         $order = Order::where('user_id', Auth::user()->id)->where('id', $orderId)->first();
-        if($order)
+        if($order) {
             return view('frontend.orders.view', compact('order'));
-        else
+        }
+        else{
             return redirect()->back()->with('message', 'No order found!!');
+        }
 
     }
 }
