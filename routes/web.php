@@ -6,10 +6,12 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Frontend\CheckoutController;
-use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\OrderController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AdminOrderController;
+use App\Http\Controllers\Frontend\CheckoutController;
+
+use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\WishlistController;
 
 /*
@@ -80,6 +82,15 @@ Route::prefix('/admin')->middleware(['auth', 'isAdmin'])->group(function(){
         Route::get('/sliders/{slider}/edit', 'edit');
         Route::put('/sliders/{slider}', 'update');
     });
+    Route::controller(AdminOrderController::class)->group(function () {
+        Route::get('/orders', 'index');
+        Route::get('/orders/{orderId}', 'show');
+        Route::put('/orders/{orderId}', 'updateOrdersStatus');
+        Route::get('/invoice/{orderId}', 'viewInvoice');
+        Route::get('/invoice/{orderId}/generate', 'generateInvoice');
+
+    });
+
     Route::post('/sliders-delete',[SliderController::class ,'deleteSlider'])->name('delete.slider');
 
 });

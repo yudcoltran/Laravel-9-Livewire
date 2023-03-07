@@ -342,3 +342,6 @@ Order
 .text-dangerous {
     color: rgb(1, 0, 2)
 }
+.table>:not(:first-child) {
+    border-top: none!important;
+}

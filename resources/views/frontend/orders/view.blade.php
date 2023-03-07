@@ -12,7 +12,7 @@
                             <i class="fa fa-shopping-cart text-dark">
                             </i>
                             My order details
-                            <a href="" class="btn btn-danger btn-md float-end">Back</a>
+                            <a href="{{ url('orders') }}" class="btn btn-danger btn-md float-end">Back</a>
                         </h4>
                         <hr>
                         <div class="row">
@@ -20,7 +20,7 @@
                                 <h5>Order Details</h5>
                                 <hr>
                                 <h6>Order Id: {{ $order->id }}</h6>
-                                <h6>Tracking No: {{ $order->track_no }}</h6>
+                                <h6>Tracking No: {{ $order->tracking_no }}</h6>
                                 <h6>Order created date: {{ $order->created_at->format('d-m-Y h:i A') }}</h6>
                                 <h6>Payment method: {{ $order->payment_mode }}</h6>
                                 <h6 class="border p-2 text-success">
@@ -53,6 +53,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php $totalPrice = 0 @endphp
                                     @foreach ($order->orderItems as $orderItem)
                                         <tr>
                                             <td width="10%">{{ $orderItem->id }}</td>
@@ -65,10 +66,16 @@
                                             <td width="10%">{{ $orderItem->price }}</td>
                                             <td width="10%">{{ $orderItem->quantity }}</td>
                                             <td width="10%">{{ $orderItem->quantity * $orderItem->price }}</td>
-
                                         </tr>
+                                        @php $totalPrice += $orderItem->quantity * $orderItem->price @endphp
                                     @endforeach
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5" class="fw-bold fs-5" style="color: red">Total Amount</td>
+                                        <td colspan="1" class="fw-bold fs-5" style="color: red">${{ $totalPrice }}</td>
+                                    </tr>
+                                </tfoot>
                             </table>
                             {{-- <div class="mt-4 float-end">
                                 {{ $orders->links() }}
