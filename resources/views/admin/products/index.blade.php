@@ -2,9 +2,12 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
+        <div class="msg">
+        </div>
+        @if (session('message'))
+            <div class="alert alert-success mb-3">{{ session('message') }}</div>
+        @endif
         <div class="card">
-            <div class="msg">
-            </div>
             <div class="cart-header mx-4 mt-4 d-flex justify-content-between align-items-center">
                 <h3 class="align-self-center">Products</h3>
                 <div class="col-md-6">

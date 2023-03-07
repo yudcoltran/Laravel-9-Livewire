@@ -36,7 +36,7 @@ class ProductFormRequest extends FormRequest
             'meta_title' => ['nullable', 'string', 'max:255'],
             'meta_keyword' => ['nullable', 'string'],
             'meta_description' => ['nullable', 'string'],
-            'image' => ['nullable', 'image', 'mimes:jpeg,jpg,png'],
+            'image' => ['nullable'],
         ];
     }
 }

@@ -16,7 +16,7 @@
             @forelse ($products as $product)
                 <tr>
                     <td>{{ $loop->index + 1 }}</td>
-                    <td>{{ $product->name }}</td>
+                    <td class="col-md-3">{{ $product->name }}</td>
                     @if ($product->category->name)
                         <td>{{ $product->category->name }}</td>
                     @else
