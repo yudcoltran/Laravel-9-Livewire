@@ -45,14 +45,13 @@
                     <div class="col-md-12">
                         <div class="trending-product owl-carousel owl-theme">
                             @foreach ($trendingProducts as $product)
-                                <div class="item">
+                                <div class="item" style="max-width: 230px;">
                                     <div class="product-card">
                                         <a href="{{ url('/collections/' . $product->category->slug . '/' . $product->slug) }}">
                                             <div class="product-card-img">
                                                 <label class="stock bg-danger">Trending</label>
                                                 @if ($product->productImages->count() > 0)
-                                                    <img src="{{ asset($product->productImages[0]['image']) }}"
-                                                        alt="{{ $product->name }}">
+                                                    <img src="{{ asset($product->productImages[0]['image']) }}" alt="{{ $product->name }}" style="object-fit: cover;">
                                                 @endif
                                             </div>
                                         </a>
@@ -69,10 +68,12 @@
                                                 <span
                                                     class="original-price text-secondary">${{ $product->selling_price }}</span>
                                             </div>
-                                            <div class="mt-2">
-                                                <a href="" class="btn btn1">Add to Cart</a>
+                                            <div class="mt-3">
+                                                <a href="" class="btn btn1">
+                                                    <i class="fa fa-cart-shopping"></i>
+                                                </a>
                                                 <a class="btn btn1"><i class="fa fa-heart"></i></a>
-                                                <a href="" class="btn btn1"> View </a>
+                                                <a href="" class="btn btn1"> <i class="fa-solid fa-eye"></i> </a>
                                             </div>
                                         </div>
                                     </div>
@@ -102,14 +103,13 @@
                     <div class="col-md-12">
                         <div class="trending-product owl-carousel owl-theme">
                             @foreach ($new as $product)
-                                <div class="item">
+                                <div class="item" style="max-width: 230px;">
                                     <div class="product-card">
                                         <a href="{{ url('/collections/' . $product->category->slug . '/' . $product->slug) }}">
                                             <div class="product-card-img">
-                                                <label class="stock bg-danger">Trending</label>
+                                                <label class="stock bg-danger">New</label>
                                                 @if ($product->productImages->count() > 0)
-                                                    <img src="{{ asset($product->productImages[0]['image']) }}"
-                                                        alt="{{ $product->name }}">
+                                                    <img src="{{ asset($product->productImages[0]['image']) }}" alt="{{ $product->name }}" style=" object-fit: cover:">
                                                 @endif
                                             </div>
                                         </a>
@@ -126,10 +126,12 @@
                                                 <span
                                                     class="original-price text-secondary">${{ $product->selling_price }}</span>
                                             </div>
-                                            <div class="mt-2">
-                                                <a href="" class="btn btn1">Add to Cart</a>
+                                            <div class="mt-3">
+                                                <a href="" class="btn btn1">
+                                                    <i class="fa fa-cart-shopping"></i>
+                                                </a>
                                                 <a class="btn btn1"><i class="fa fa-heart"></i></a>
-                                                <a href="" class="btn btn1"> View </a>
+                                                <a href="" class="btn btn1"> <i class="fa-solid fa-eye"></i> </a>
                                             </div>
                                         </div>
                                     </div>

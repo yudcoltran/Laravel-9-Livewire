@@ -1,9 +1,9 @@
 <div>
     <div class="py-3 py-md-5 bg-light">
         <div class="container">
-            <div class="row">
+            <div class="row" style="background-color: white;">
                 <div class="col-md-5 mt-3">
-                    <div class="bg-white border product-img object-cover" wire:ignore>
+                    <div class="bg-white product-img object-cover" wire:ignore>
                         {{-- <img src="{{ asset($product->productImages[0]->image) }}" class="h-100" alt="{{ $product->name }}"> --}}
                         <div class="exzoom" id="exzoom">
                             <!-- Images -->
@@ -31,22 +31,24 @@
                     </div>
                 </div>
                 <div class="col-md-7 mt-3">
-                    <div class="product-view position-relative">
+                    <div class="product-view">
                         <h4 class="product-name">
                             {{ $product->name }}
+                        </h4>
+                        <hr>
+                        <p class="product-path">
+                            Home / {{ $product->category->name }} / {{ $product->brand }} / {{ $product->name }}
+                        </p>
+                        <div class="position-relative">
                             @if ($product->quantity > 0)
-                                <label class="label-stock bg-success">In Stock</label>
+                            <label class="label-stock bg-success">In Stock</label>
                             @else
                                 <label class="label-stock bg-danger">Out of Stock</label>
                             @endif
                             @if ($product->trending)
                                 <label class="label-trending bg-danger">Trending</label>
                             @endif
-                        </h4>
-                        <hr>
-                        <p class="product-path">
-                            Home / {{ $product->category->name }} / {{ $product->brand }} / {{ $product->name }}
-                        </p>
+                        </div>
                         <div>
                             <span class="selling-price">${{ $product->original_price }}</span>
                             <span class="original-price">${{ $product->selling_price }}</span>
@@ -71,7 +73,7 @@
                             </button>
                         </div>
                         <div class="mt-3">
-                            <h5 class="mb-3">Detail</h5>
+                            <h5 class="mb-3">DETAILS</h5>
                             <p>
                                 {!! $product->small_description !!}
                             </p>
@@ -79,9 +81,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 mt-3">
-                    <div class="card">
+            <div class="row" >
+                <div class="col-md-12 mt-3 bg-white">
+                    <div class="card description">
                         <div class="card-header bg-white text-dark">
                             <h4>Description</h4>
                         </div>

@@ -52,17 +52,18 @@
     .exzoom .exzoom_btn a {
       display: block;
       width: 15px;
-      border: 1px solid #ddd;
+      /* border: 1px solid #ddd; */
       height: 60px;
       line-height: 60px;
-      background: #eee;
+      /* background: #eee; */
       text-align: center;
-      font-size: 18px;
+      font-size: 24px;
       position: absolute;
       left: 0;
       top: -62px;
       text-decoration: none;
-      color: #999; }
+      color: #999;
+    }
     .exzoom .exzoom_btn a:hover {
       background: #f60;
       color: #fff; }
@@ -80,7 +81,7 @@
     .exzoom .exzoom_zoom_outer {
       display: none; } }
   .exzoom .exzoom_img_ul_outer {
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     position: absolute;
     overflow: hidden; }
     .exzoom .exzoom_img_ul_outer .exzoom_img_ul {

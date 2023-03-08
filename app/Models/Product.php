@@ -27,7 +27,8 @@ class Product extends Model
         'featured',
         'status',
         'meta_title',
-        'meta_description'
+        'meta_keyword',
+        'meta_description',
     ];
 
     public function productImages(){

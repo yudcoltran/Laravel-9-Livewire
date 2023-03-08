@@ -1,12 +1,12 @@
 <div>
    <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3" style="max-width: 280px;">
             @if($category->brands)
-                <div class="card rounded-10 rounded-start">
-                    <div class="card-header">
-                        <h4>Brands</h4>
+                <div class="mb-5">
+                    <div class="mb-3">
+                        <h5>Brands</h5>
                     </div>
-                    <div class="card-body">
+                    <div class="">
                         @foreach ($category->brands as $brand)
                             <lable class="d-block">
                                 <input class="mx-2" type="checkbox" wire:model="brandInputs" value="{{ $brand->name }}"> {{ $brand->name }}
@@ -15,11 +15,12 @@
                     </div>
                 </div>
             @endif
-            <div class="card mt-3 rounded-10 rounded-start ">
-                <div class="card-header">
-                    <h4>Price</h4>
+            <hr style="max-width: 180px;">
+            <div class="mt-4">
+                <div class="mb-3">
+                    <h5>Price</h5>
                 </div>
-                <div class="card-body">
+                <div class="">
                     <lable class="d-block">
                         <input class="mx-2" type="radio" name="priceSort" wire:model="priceInput" value="high-to-low">High to Low
                     </lable>
@@ -32,7 +33,7 @@
         <div class="col-md-9">
             <div class="row">
                 @forelse ($products as $product)
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div class="product-card">
                             <a href="{{ url('/collections/' . $product->category->slug . '/' . $product->slug) }}">
                                 <div class="product-card-img">

@@ -97,37 +97,37 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item mr-5" style="margin-left: -1.25rem;">
-                        <a class="nav-link" style="font-weight: 500; color: rgb(126, 124, 124);" href="{{ url('/') }}">Home</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500; color: rgb(126, 124, 124);" href="{{ url('/collections') }}">All Categories</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="{{ url('/collections') }}">All Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500; color: rgb(126, 124, 124);" href="#">New Arrivals</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="#">New Arrivals</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500; color: rgb(126, 124, 124);" href="#">Featured Products</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="#">Featured Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500; color: rgb(126, 124, 124);" href="#">News</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="#">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500; color: rgb(126, 124, 124);" href="#">Supports</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="#">Supports</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500; color: rgb(126, 124, 124);" href="#">About Us</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500; color: rgb(126, 124, 124);" href="#">Services</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="#">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500; color: rgb(126, 124, 124);" href="#">Contact</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500; color: rgb(126, 124, 124);" href="#">Recruiment</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="#">Recruiment</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500; color: rgb(126, 124, 124);" href="#">Our Subsidiaries</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="#">Our Subsidiaries</a>
                     </li>
                 </ul>
             </div>

@@ -107,7 +107,8 @@
                             <div class="mb-4">
                                 <label for="">Meta keyword</label>
                                 <textarea name="meta_keyword" rows="3" class="form-control">
-                                    {{ $product->meta_keyword }}</textarea>
+                                    {{ $product->meta_keyword }}
+                                </textarea>
                             </div>
                             <div class="mb-4">
                                 <label for="">Meta description</label>

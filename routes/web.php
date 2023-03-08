@@ -95,5 +95,4 @@ Route::prefix('/admin')->middleware(['auth', 'isAdmin'])->group(function(){
     });
 
     Route::post('/sliders-delete',[SliderController::class ,'deleteSlider'])->name('delete.slider');
-
 });

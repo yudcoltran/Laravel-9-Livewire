@@ -91,14 +91,14 @@ a, li {
 }
 .main-navbar .navbar .nav-item .nav-link{
     padding: 8px 20px;
-    color: #000;
+    color: #7d7a7a;
     font-size: 15px;
+}
+.main-navbar .navbar .nav-item .nav-link:hover {
+    color: #000;
 }
 .main-navbar .navbar {
     background-color: white;
-}
-.navbar-expand-lg {
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -171,8 +171,8 @@ a, li {
 .product-card .product-card-img{
     max-height: 220px;
     overflow: hidden;
-    border-bottom: 1px solid #ccc;
     position: relative;
+    box-shadow: 0 1px 1px rgba(234, 231, 231, .5);
 }
 .product-card .product-card-img img{
     width: 100%;
@@ -219,13 +219,16 @@ a, li {
     text-overflow: ellipsis;
     overflow: hidden;
 }
+.btn1 .heart > i{
+    background-color: red;
+}
 .product-card .product-card-body .btn1:hover {
     color: red;
 }
 /* Product Card End */
 .card-header {
-    background-color: #303030;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(123, 121, 121);
 }
 
 /* Product View */
@@ -233,7 +236,7 @@ a, li {
     font-size: 24px;
     color: #2874f0;
 }
-.product-view .product-name .label-stock{
+.product-view .label-stock{
     font-size: 13px;
     padding: 4px 13px;
     border-radius: 5px;
@@ -241,7 +244,7 @@ a, li {
     box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
     float: right;
 }
-.product-view .product-name .label-trending {
+.product-view .label-trending {
     font-size: 13px;
     padding: 4px 13px;
     border-radius: 5px;
@@ -270,7 +273,7 @@ a, li {
     text-decoration: line-through;
 }
 .product-view .btn1{
-    border: 1px solid;
+    border: 1px solid rgb(193, 193, 190);
     margin-right: 3px;
     border-radius: 0px;
     font-size: 14px;
@@ -281,13 +284,19 @@ a, li {
     color: #fff;
 }
 .product-view .input-quantity{
-    border: 1px solid #000;
+    border: 1px solid rgb(193, 193, 190);
     margin-right: 3px;
     font-size: 12px;
     margin-top: 10px;
     width: 58px;
     outline: none;
     text-align: center;
+}
+.description {
+    border: none!important;
+}
+.description .card-header {
+    border: none!important;
 }
 /* Product View */
 .input-group #form-search {
