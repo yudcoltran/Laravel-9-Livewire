@@ -65,7 +65,7 @@ class SliderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SLider $slider)
+    public function edit(Slider $slider)
     {
         return view('admin.sliders.edit', compact('slider'));
     }
