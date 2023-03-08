@@ -50,9 +50,10 @@ class ProductController extends Controller
             'selling_price' => $data['selling_price'],
             'quantity' => $data['quantity'],
             'trending' => $request->trending == true ? '1' : '0',
+            'featured' => $request->featured == true ? '1' : '0',
             'status' => $request->status == true ? '1' : '0',
             'meta_title' => $data['meta_title'],
-            'meta_keyword' => $data['meta_title'],
+            'meta_keyword' => $data['meta_keyword'],
             'meta_description' => $data['meta_description']
         ]);
 
@@ -116,9 +117,10 @@ class ProductController extends Controller
                 'selling_price' => $data['selling_price'],
                 'quantity' => $data['quantity'],
                 'trending' => $request->trending == true ? '1' : '0',
+                'featured' => $request->featured == true ? '1' : '0',
                 'status' => $request->status == true ? '1' : '0',
                 'meta_title' => $data['meta_title'],
-                'meta_keyword' => $data['meta_title'],
+                'meta_keyword' => $data['meta_keyword'],
                 'meta_description' => $data['meta_description']
             ]);
 

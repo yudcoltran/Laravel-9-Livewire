@@ -32,6 +32,7 @@ class ProductFormRequest extends FormRequest
             'selling_price' => ['required', 'integer', 'min:0'],
             'quantity' => ['required', 'integer', 'min:0'],
             'trending' => ['nullable'],
+            'featured' => ['nullable'],
             'status' => ['nullable'],
             'meta_title' => ['nullable', 'string', 'max:255'],
             'meta_keyword' => ['nullable', 'string'],

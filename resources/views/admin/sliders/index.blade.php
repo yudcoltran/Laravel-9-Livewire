@@ -31,8 +31,8 @@
                             @foreach ($sliders as $slider)
                                 <tr>
                                     <td>{{ $loop->index + 1 }}</td>
-                                    <td>{{ $slider->title }}</td>
-                                    <td>{{ $slider->description }}</td>
+                                    <td class="col-md-2">{{ $slider->title }}</td>
+                                    <td class="col-md-3">{{ $slider->description }}</td>
                                     <td>
                                         <img src="{{ asset($slider->image) }}" alt=""
                                             style="width: 200px; height: 120px; border-radius: 0%;">

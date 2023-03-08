@@ -97,6 +97,9 @@ a, li {
 .main-navbar .navbar {
     background-color: white;
 }
+.navbar-expand-lg {
+
+}
 
 @media only screen and (max-width: 600px) {
     .main-navbar .top-navbar .nav-link{

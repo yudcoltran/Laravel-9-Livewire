@@ -140,6 +140,12 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="mb-4">
+                                            <label for="">Featured</label>
+                                            <input type="checkbox" name="featured" style="height: 16px; width: 16px">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-4">
                                             <label for="">Status - Not Ready</label>
                                             <input type="checkbox" name="status" style="height: 16px; width: 16px">
                                         </div>

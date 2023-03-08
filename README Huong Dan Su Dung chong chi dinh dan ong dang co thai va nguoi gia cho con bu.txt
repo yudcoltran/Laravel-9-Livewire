@@ -13,3 +13,9 @@ localhost:8000/admin/category (View Categories page - co CRUD)
 localhost:8000/admin/products (View Products page - co CRUD)
 localhost:8000/admin/sliders
 ...tiep tuc update
+user account:
+user1@gmail.com
+123456789
+admin account:
+admin1@gmail.com
+admin123

@@ -32,7 +32,7 @@
         <div class="col-md-9">
             <div class="row">
                 @forelse ($products as $product)
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="product-card">
                             <a href="{{ url('/collections/' . $product->category->slug . '/' . $product->slug) }}">
                                 <div class="product-card-img">

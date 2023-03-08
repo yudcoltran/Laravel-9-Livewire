@@ -12,10 +12,18 @@ class FrontendController extends Controller
 {
     public function index() {
         $sliders = Slider::where('status', '0')->get();
-        $trendingProducts = Product::where('trending', '1')->latest()->take(10)->get();
-        return view('frontend.carousel.index', compact('sliders', 'trendingProducts'));
+        $new = Product::latest()->take(10)->get();
+        $trendingProducts = Product::where('trending', '1')->take(10)->get();
+        return view('frontend.carousel.index', compact('sliders', 'trendingProducts', 'new'));
     }
-
+    public function newArrival(){
+        $new = Product::latest()->take(10)->get();
+        return view('frontend.pages.new-arrival', compact('new'));
+    }
+    public function featuredProducts(){
+        $featuredProducts = Product::where('featured', '1')->latest()->get();
+        return view('frontend.pages.featured-products', compact('featuredProducts'));
+    }
     public function categories(){
         $cats = Category::where('status', '0')->get();
         return view('frontend.collections.category.index', compact('cats'));

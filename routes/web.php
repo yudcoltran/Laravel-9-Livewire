@@ -34,8 +34,10 @@ Auth::routes();
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/collections', [FrontendController::class, 'categories'])->name('categories.fe');
 Route::get('/collections/{category_slug}', [FrontendController::class, 'products']);
-
 Route::get('/collections/{category_slug}/{product_slug}', [FrontendController::class, 'productDetail']);
+Route::get('new-arrivals', [FrontendController::class, 'newArrival']);
+Route::get('/featured-products', [FrontendController::class, 'featuredProducts']);
+
 Route::middleware(['auth'])->group(function () {
     Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist');
     Route::get('cart', [CartController::class, 'index'])->name('cart');
@@ -44,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('orders', [OrderController::class, 'index'])->name('orders');
     Route::get('orders/{orderId}', [OrderController::class, 'show']);
 });
+
 
 
 Route::get('thank-you', [FrontendController::class, 'thankyou']);
