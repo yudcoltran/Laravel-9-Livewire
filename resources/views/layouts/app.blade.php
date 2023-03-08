@@ -29,9 +29,10 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <!-- Default theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
-
+    <!--Exzoom-->
+    <link href="{{ asset('assets/exzoom/jquery.exzoom.css') }}" rel="stylesheet">
     <!-- Scripts -->
-    @vite(['public/assets/css/bootstrap.min.css', 'public/assets/css/custom.css' , 'public/assets/js/bootstrap.bundle.min.js', 'public/assets/js/jquery-3.6.3.min.js'])
+    @vite(['public/assets/css/bootstrap.min.css', 'public/assets/css/custom.css', 'public/assets/css/owl.carousel.min.css', 'public/assets/css/owl.theme.default.min.css', 'public/assets/js/bootstrap.bundle.min.js'])
     @livewireStyles
 </head>
 <body>
@@ -42,8 +43,12 @@
         <main class="">
             @yield('content')
         </main>
+        {{-- footer --}}
+        @include('layouts.inc.frontend.footer')
+
     </div>
 
+    <script src="{{ asset('assets/js/jquery-3.6.3.min.js')}}"></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <script>
         window.addEventListener('message', event => {
@@ -53,6 +58,9 @@
             }
         })
     </script>
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/exzoom/jquery.exzoom.js') }}"></script>
+    @yield('script')
     @livewireScripts
     @stack('scripts')
 

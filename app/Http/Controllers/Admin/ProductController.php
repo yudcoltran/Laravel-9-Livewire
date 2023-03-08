@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::query()->orderBy('updated_at', 'desc')->paginate(5);
+        $products = Product::query()->orderBy('updated_at', 'desc')->paginate(20);
         return view('admin.products.index', compact('products'));
     }
 
@@ -52,6 +52,7 @@ class ProductController extends Controller
             'trending' => $request->trending == true ? '1' : '0',
             'status' => $request->status == true ? '1' : '0',
             'meta_title' => $data['meta_title'],
+            'meta_keyword' => $data['meta_title'],
             'meta_description' => $data['meta_description']
         ]);
 
@@ -117,6 +118,7 @@ class ProductController extends Controller
                 'trending' => $request->trending == true ? '1' : '0',
                 'status' => $request->status == true ? '1' : '0',
                 'meta_title' => $data['meta_title'],
+                'meta_keyword' => $data['meta_title'],
                 'meta_description' => $data['meta_description']
             ]);
 

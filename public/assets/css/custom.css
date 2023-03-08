@@ -345,3 +345,44 @@ Order
 .table>:not(:first-child) {
     border-top: none!important;
 }
+.underline {
+    height: 4px;
+    width: 100px;
+    background-color: #76b900;
+    margin: 10px 0px;
+}
+/* footer */
+.footer-area{
+    padding: 40px 0px;
+    background-color: #76b900;
+    color: #ffffff;
+}
+.footer-area a{
+    text-decoration: none;
+}
+.footer-area .footer-heading{
+    font-size: 24px;
+    color: #fefefe;
+}
+.footer-area .footer-underline{
+    height: 1px;
+    width: 70px;
+    background-color: #d4d2d2;
+    margin: 10px 0px;
+}
+.copyright-area{
+    padding: 14px 0px;
+    background-color: #262626;
+}
+.copyright-area p{
+    margin-bottom: 0px;
+    color: #aba7a7;
+}
+.copyright-area .social-media{
+    text-align: end;
+}
+.copyright-area .social-media a{
+    margin: 0px 10px;
+    color: #ffffff;
+    width: 20px;
+}
