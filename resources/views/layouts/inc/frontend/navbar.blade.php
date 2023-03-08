@@ -63,9 +63,9 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('orders') }}"><i class="fa fa-list"></i> My Orders</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('wishlist') }}"><i class="fa fa-heart"></i> My Wishlist</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();document.getElementById('logout-form').submit();"

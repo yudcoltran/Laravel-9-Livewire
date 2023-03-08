@@ -37,11 +37,11 @@ Route::get('/collections/{category_slug}', [FrontendController::class, 'products
 
 Route::get('/collections/{category_slug}/{product_slug}', [FrontendController::class, 'productDetail']);
 Route::middleware(['auth'])->group(function () {
-    Route::get('wishlist', [WishlistController::class, 'index']);
-    Route::get('cart', [CartController::class, 'index']);
+    Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist');
+    Route::get('cart', [CartController::class, 'index'])->name('cart');
     Route::get('checkout', [CheckoutController::class, 'index']);
     // Route::get('/vn_payment', [CheckoutController::class, 'vnpayment']);
-    Route::get('orders', [OrderController::class, 'index']);
+    Route::get('orders', [OrderController::class, 'index'])->name('orders');
     Route::get('orders/{orderId}', [OrderController::class, 'show']);
 });
 
