@@ -12,9 +12,6 @@
                 </h3>
             </div>
             <div class="card-body">
-                @if(session('message'))
-                    <h3 class="alert alert-success">{{ session('message') }}</h3>
-                @endif
                 @if($errors->any())
                     <div class="alert alert-warning">
                         @foreach ( $errors->all() as $error)

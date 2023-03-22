@@ -2,15 +2,17 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminOrderController;
-use App\Http\Controllers\Frontend\CheckoutController;
 
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\WishlistController;
 
@@ -35,8 +37,10 @@ Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/collections', [FrontendController::class, 'categories'])->name('categories.fe');
 Route::get('/collections/{category_slug}', [FrontendController::class, 'products']);
 Route::get('/collections/{category_slug}/{product_slug}', [FrontendController::class, 'productDetail']);
-Route::get('new-arrivals', [FrontendController::class, 'newArrival']);
+Route::get('/new-arrivals', [FrontendController::class, 'newArrival']);
 Route::get('/featured-products', [FrontendController::class, 'featuredProducts']);
+Route::get('/trending-products', [FrontendController::class, 'trendingProducts']);
+Route::get('search', [FrontendController::class, 'searchProducts']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist');
@@ -56,6 +60,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('/admin')->middleware(['auth', 'isAdmin'])->group(function(){
     //Dashboard
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    //setting
+    Route::get('settings', [SettingController::class, 'index']);
+    Route::post('settings', [SettingController::class, 'store']);
     //category
     Route::controller(CategoryController::class)->group(function () {
         Route::get('/category', 'index')->name('category');
@@ -95,4 +102,15 @@ Route::prefix('/admin')->middleware(['auth', 'isAdmin'])->group(function(){
     });
 
     Route::post('/sliders-delete',[SliderController::class ,'deleteSlider'])->name('delete.slider');
+
+    Route::controller(UserController::class)->group(function () {
+        Route::get('/users', 'index');
+        Route::get('/users/create', 'create');
+        Route::post('/users', 'store');
+        Route::get('/users/{user_id}/edit', 'edit');
+        Route::put('/users/{user_id}', 'update');
+    });
+    Route::post('/user-delete',[UserController::class ,'deleteUser'])->name('delete.user');
+    Route::get('/user-search',[UserController::class ,'searchUser'])->name('search.user');
+
 });

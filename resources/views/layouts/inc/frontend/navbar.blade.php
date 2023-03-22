@@ -4,13 +4,13 @@
             <div class="row">
                 <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
                     <a href="{{ route('index') }}" style="text-decoration: none">
-                        <h3 class="brand-name">LComputer</h3>
+                        <h3 class="brand-name">{{ $appSetting->website_name ?? 'LComputer' }}</h3>
                     </a>
                 </div>
                 <div class="col-md-5 my-auto">
-                    <form role="search">
+                    <form action="{{ url('search') }}" method="GET" role="search">
                         <div class="input-group my-auto overflow-hidden rounded-30">
-                            <input type="search" class="form-control" id="form-search" placeholder="Search..." aria-label="Search" aria-describedby="button-addon2"
+                            <input type="search" name="search" value="{{ Request::get('search') }}" class="form-control" id="form-search" placeholder="Search..." aria-label="Search" aria-describedby="button-addon2"
                             style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);"
                             >
                             <button style="background-color: rgb(255, 255, 255); outline:none;" class="btn text-muted" id="btn-search" type="submit" id="button-addon2">
@@ -89,7 +89,7 @@
     <nav class="navbar navbar-expand-lg shadow-sm">
         <div class="container-fluid container">
             <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
-                LComputer
+                {{ $appSetting->website_name ?? 'LComputer' }}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -103,10 +103,10 @@
                         <a class="nav-link" style="font-weight: 500;  " href="{{ url('/collections') }}">All Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500;  " href="#">New Arrivals</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="{{ url('new-arrivals') }}">New Arrivals</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500;  " href="#">Featured Products</a>
+                        <a class="nav-link" style="font-weight: 500;  " href="{{ url('featured-products') }}">Featured Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="font-weight: 500;  " href="#">News</a>

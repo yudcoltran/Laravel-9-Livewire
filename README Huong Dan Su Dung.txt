@@ -1,3 +1,5 @@
+Phien ban PHP >= 8.1.0
+Phien ban Laravel >= 9
 route User page:
 localhost:8000/ (home page)
 localhost:8000/collections (categories page)

@@ -7,20 +7,21 @@ use Livewire\Component;
 
 class CartShow extends Component
 {
-    public $cart, $totalPrice = 0;
+    public $cart, $totalPrice = 0, $cart_id;
     public function decrementQuantity(int $cartId){
         $cartData = Cart::where('id', $cartId)->where('user_id', auth()->user()->id)->first();
         if($cartData) {
-            $cartData->decrement('quantity');
-            if($cartData->quantity < 1) {
-                $this->removeCartItem($cartData->id);
-                return false;
+            if($cartData->quantity == 1) {
+                $this->deleteCartItem($cartId);
+                $this->dispatchBrowserEvent('delete');
+            }else {
+                $cartData->decrement('quantity');
+                $this->dispatchBrowserEvent('message', [
+                    'text' => 'Quantity Updated',
+                    'type' => 'success',
+                    'status' => 200
+                ]);
             }
-            $this->dispatchBrowserEvent('message', [
-                'text' => 'Quantity Updated',
-                'type' => 'success',
-                'status' => 200
-            ]);
         }else {
             $this->dispatchBrowserEvent('message', [
                 'text' => 'Oops something went wrong',
@@ -57,10 +58,15 @@ class CartShow extends Component
         }
     }
 
-    public function removeCartItem(int $cartId) {
-        $cartRemove = Cart::where('user_id', auth()->user()->id)->where('id', $cartId)->first();
+    public function deleteCartItem($cart_id) {
+        $this->cart_id = $cart_id;
+    }
+
+    public function removeCartItem() {
+        $cartRemove = Cart::where('user_id', auth()->user()->id)->where('id', $this->cart_id)->first();
         if($cartRemove){
             $cartRemove->delete();
+            $this->dispatchBrowserEvent('close-modal');
             $this->emit('cartUpdated');
             $this->dispatchBrowserEvent('message', [
                 'text' => 'Remove',
@@ -69,7 +75,6 @@ class CartShow extends Component
             ]);
             return true;
         }
-        $this->emit('cartUpdated');
         $this->dispatchBrowserEvent('message', [
             'text' => 'Oops something went wrong',
             'type' => 'error',
